@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A calm, simple study planner for organizing your learning goals.">
+  <title>Study Bloom — Student Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Study Bloom home">
+        <span class="brand-mark">✦</span>
+        <span>study<span class="brand-accent">bloom</span></span>
+      </a>
+      <div class="today-pill"><span class="status-dot"></span><span id="todayLabel">Ready for a fresh start</span></div>
+    </header>
+
+    <section class="hero" aria-labelledby="welcomeTitle">
+      <div>
+        <p class="eyebrow">YOUR LITTLE CORNER TO FOCUS</p>
+        <h1 id="welcomeTitle">Make progress,<br><em>one task at a time.</em></h1>
+        <p class="hero-copy">Plan your study sessions, celebrate small wins, and keep your learning momentum growing.</p>
+      </div>
+      <div class="hero-sparkle" aria-hidden="true">✺</div>
+    </section>
+
+    <section class="stats-grid" aria-label="Study progress summary">
+      <article class="stat-card progress-card">
+        <div class="stat-heading"><span>Overall progress</span><span class="progress-percent" id="progressPercent">0%</span></div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <p id="progressMessage">Add your first task to get started.</p>
+      </article>
+      <article class="stat-card"><span class="stat-icon peach">◷</span><div><p class="stat-label">To study</p><strong id="remainingCount">0</strong><span class="stat-suffix"> tasks left</span></div></article>
+      <article class="stat-card"><span class="stat-icon lavender">✓</span><div><p class="stat-label">Completed</p><strong id="completedCount">0</strong><span class="stat-suffix"> tasks done</span></div></article>
+    </section>
+
+    <section class="workspace">
+      <div class="tasks-panel">
+        <div class="section-heading">
+          <div><p class="eyebrow">YOUR PLAN</p><h2>Study tasks</h2></div>
+          <span class="task-count" id="taskCount">0 tasks</span>
+        </div>
+        <form class="task-form" id="taskForm">
+          <label class="sr-only" for="taskInput">What do you want to study?</label>
+          <input id="taskInput" type="text" maxlength="100" placeholder="What do you want to study?" autocomplete="off" required>
+          <select id="subjectInput" aria-label="Choose a subject">
+            <option value="General">General</option><option value="Math">Math</option><option value="Science">Science</option><option value="Languages">Languages</option><option value="History">History</option><option value="Creative">Creative</option>
+          </select>
+          <button class="add-button" type="submit"><span>＋</span> Add task</button>
+        </form>
+        <div class="filters" role="group" aria-label="Filter tasks"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="active">To do</button><button class="filter" data-filter="completed">Completed</button></div>
+        <div class="task-list" id="taskList" aria-live="polite"></div>
+        <div class="empty-state" id="emptyState"><div class="empty-icon">☼</div><h3>Your plan is waiting</h3><p>Add a task above and make today count.</p></div>
+      </div>
+      <aside class="quote-card"><span class="quote-mark">“</span><blockquote>Small steps every day add up to big changes.</blockquote><div class="quote-line"></div><p>YOUR DAILY REMINDER</p><span class="leaf" aria-hidden="true">⌁</span></aside>
+    </section>
+    <footer>Made for your next small win <span>✦</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
